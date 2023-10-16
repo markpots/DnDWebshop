@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview of all dice sets</title>
+</head>
+<body>
+
+<h1>Overview of all dice sets</h1>
+
+<table>
+    <tr>
+        <th>diceId</th>
+        <th>diceName</th>
+    </tr>
+    <tr th:each="dice : ${allDice}">
+        <td th:text="${dice.diceId}"></td>
+        <td th:text="${dice.diceName}"></td>
+    </tr>
+</table>
+</body>
+</html>
