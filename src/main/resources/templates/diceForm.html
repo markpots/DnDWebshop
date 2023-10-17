@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a new dice set</title>
+</head>
+<body>
+
+<h1>Create a new dice set</h1>
+
+<form th:action="@{/dice/new}" method="post" th:object="${dice}">
+    <table>
+        <tr>
+            <th>Dice set name</th>
+            <th>Material</th>
+            <th>Color set</th>
+        </tr>
+        <tr>
+            <td><input type="text" th:field="*{diceName}"></td>
+            <td><input type="text" th:field="*{diceMaterial}"></td>
+            <td><input type="text" th:field="*{diceColor}"></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Save die">
+</form>
+</body>
+</html>

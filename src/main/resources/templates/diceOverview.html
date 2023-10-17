@@ -12,10 +12,14 @@
     <tr>
         <th>diceId</th>
         <th>diceName</th>
+        <th>diceColor</th>
+        <th>diceMaterial</th>
     </tr>
     <tr th:each="dice : ${allDice}">
         <td th:text="${dice.diceId}"></td>
         <td th:text="${dice.diceName}"></td>
+        <td th:text="${dice.diceColor}"></td>
+        <td th:text="${dice.diceMaterial}"></td>
     </tr>
 </table>
 </body>

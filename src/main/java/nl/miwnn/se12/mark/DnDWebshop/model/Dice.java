@@ -14,14 +14,25 @@ public class Dice {
 
     @Id @GeneratedValue
     private int diceId;
-
+    private String diceColor;
     private String diceName;
+    private String diceMaterial;
+
+
+    public int getDiceId() {
+        return diceId;
+    }
+
     public void setDiceId(int id) {
         this.diceId = id;
     }
 
-    public int getDiceId() {
-        return diceId;
+    public String getDiceColor() {
+        return diceColor;
+    }
+
+    public void setDiceColor(String diceColor) {
+        this.diceColor = diceColor;
     }
 
     public String getDiceName() {
@@ -30,5 +41,13 @@ public class Dice {
 
     public void setDiceName(String diceName) {
         this.diceName = diceName;
+    }
+
+    public String getDiceMaterial() {
+        return diceMaterial;
+    }
+
+    public void setDiceMaterial(String diceMaterial) {
+        this.diceMaterial = diceMaterial;
     }
 }
