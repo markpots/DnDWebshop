@@ -5,20 +5,28 @@
     <title>Create a new dice set</title>
 </head>
 <body>
-
+<div class="navbar">
+    <a href="/dice">Back</a>
+</div>
 <h1>Create a new dice set</h1>
 
 <form th:action="@{/dice/new}" method="post" th:object="${dice}">
     <table>
         <tr>
-            <th>Dice set name</th>
-            <th>Material</th>
-            <th>Color set</th>
+            <td><label for="diceName">Dice set name</label></td>
+            <td><label for="diceMaterial">Material</label></td>
+            <td><label for="diceColor">Color set</label></td>
         </tr>
         <tr>
-            <td><input type="text" th:field="*{diceName}"></td>
-            <td><input type="text" th:field="*{diceMaterial}"></td>
-            <td><input type="text" th:field="*{diceColor}"></td>
+            <td>
+                <input type="text" id="diceName" th:field="*{diceName}">
+            </td>
+            <td>
+                <input type="text" id="diceMaterial" th:field="*{diceMaterial}">
+            </td>
+            <td>
+                <input type="text" id="diceColor" th:field="*{diceColor}">
+            </td>
         </tr>
     </table>
 

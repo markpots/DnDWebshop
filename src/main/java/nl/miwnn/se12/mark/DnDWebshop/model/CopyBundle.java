@@ -6,20 +6,23 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * This file is made by: Mark Pots
  * <m.pots@st.hanze.nl>
- * The concept of a die set that is available at my webshop
+ * A physical copy of a bundle that can be available for buying
  */
 
 @Entity
 @Getter @Setter
-public class Dice {
+public class CopyBundle {
 
     @Id @GeneratedValue
-    private Integer diceId;
-    private String diceColor;
-    private String diceName;
-    private String diceMaterial;
+    private Integer copyBundleId;
+
+    private Boolean available = true;
+
+    @ManyToOne
+    private Bundle bundle;
 }

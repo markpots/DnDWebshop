@@ -3,6 +3,7 @@ package nl.miwnn.se12.mark.DnDWebshop.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,16 +11,16 @@ import javax.persistence.Id;
 /**
  * This file is made by: Mark Pots
  * <m.pots@st.hanze.nl>
- * The concept of a die set that is available at my webshop
+ * The concept of a bundle that is available at my webshop
  */
 
 @Entity
 @Getter @Setter
-public class Dice {
+public class Bundle {
 
     @Id @GeneratedValue
-    private Integer diceId;
-    private String diceColor;
-    private String diceName;
-    private String diceMaterial;
+    private Integer bundleId;
+
+    @Column(unique = true)
+    private String bundleName;
 }

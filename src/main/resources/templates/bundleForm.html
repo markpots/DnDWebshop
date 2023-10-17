@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a new bundle</title>
+</head>
+<body>
+<div class="navbar">
+    <a href="/bundle">Back</a>
+</div>
+<h1>Create a new bundle</h1>
+
+<form th:action="@{/bundle/new}" method="post" th:object="${bundle}">
+    <table>
+        <tr>
+            <td><label for="titleField">Bundel naam</label></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="titleField" th:field="*{bundleName}">
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Save bundle">
+</form>
+</body>
+</html>

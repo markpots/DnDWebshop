@@ -5,21 +5,27 @@
     <title>Overview of all dice sets</title>
 </head>
 <body>
-
+<div class="navbar">
+    <a href="/home">Home</a>
+    <a href="/dice" aria-current="page">Dice</a>
+    <a href="/dice/new">Add dice</a>
+    <a href="/bundle">Bundles</a>
+    <a href="/bundle/new">Add bundle</a>
+</div>
 <h1>Overview of all dice sets</h1>
 
 <table>
     <tr>
-        <th>diceId</th>
-        <th>diceName</th>
-        <th>diceColor</th>
-        <th>diceMaterial</th>
+        <th>Dice Id</th>
+        <th>Dice name</th>
+        <th>Dice material</th>
+        <th>Dice color</th>
     </tr>
     <tr th:each="dice : ${allDice}">
         <td th:text="${dice.diceId}"></td>
         <td th:text="${dice.diceName}"></td>
-        <td th:text="${dice.diceColor}"></td>
         <td th:text="${dice.diceMaterial}"></td>
+        <td th:text="${dice.diceColor}"></td>
     </tr>
 </table>
 </body>
