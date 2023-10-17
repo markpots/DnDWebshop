@@ -18,12 +18,12 @@
     <tr>
         <th>Bundle Id</th>
         <th>Bundle name</th>
+        <th>Available amount</th>
         <th>Buy</th>
     </tr>
     <tr th:each="bundle : ${allBundle}">
         <td th:text="${bundle.bundleId}"></td>
         <td th:text="${bundle.bundleName}"></td>
-        <td><a th:href="@{/copyBundle/new/{bundleId}(bundleId=${bundle.bundleId})}"></a></td>
     </tr>
 </table>
 </body>

@@ -6,6 +6,8 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 /**
  * This file is made by: Mark Pots
@@ -22,4 +24,6 @@ public class Dice {
     private String diceColor;
     private String diceName;
     private String diceMaterial;
+    private Boolean available = true;
+
 }

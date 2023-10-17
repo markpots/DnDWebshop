@@ -62,4 +62,14 @@ public class BundleController {
         return "bundleDetail";
     }
 
+    @GetMapping("/bundle/delete")
+    private String showBundleDeleteForm(Model model) {
+        model.addAttribute("bundle", new Bundle());
+        return "bundleDeleteForm";
+    }
+    @PostMapping("/bundle/delete")
+    private String deleteBundle(@ModelAttribute("bundle") Bundle bundleToBeDeleted) {
+        bundleRepository.deleteById(bundleToBeDeleted.getBundleId());
+        return "redirect:/";
+    }
 }

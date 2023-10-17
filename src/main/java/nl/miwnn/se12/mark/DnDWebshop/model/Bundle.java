@@ -3,10 +3,8 @@ package nl.miwnn.se12.mark.DnDWebshop.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * This file is made by: Mark Pots
@@ -23,4 +21,32 @@ public class Bundle {
 
     @Column(unique = true)
     private String bundleName;
+
+    @OneToMany(mappedBy = "bundle")
+    private List<CopyBundle> copies;
+
+    public int getNumberOfAvailableBundleCopies() {
+        int count = 0;
+
+        for (CopyBundle copy : copies) {
+            if (copy.getAvailable())
+                count++;
+        }
+
+        return count;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
