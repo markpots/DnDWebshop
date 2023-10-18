@@ -5,13 +5,7 @@
     <title>Overview of all bundles</title>
 </head>
 <body>
-<div class="navbar">
-    <a href="/home">Home</a>
-    <a href="/dice">Dice</a>
-    <a href="/dice/new">Add dice</a>
-    <a href="/bundle" aria-current="page">Bundles</a>
-    <a href="/bundle/new">Add bundle</a>
-</div>
+<div th:include="fragments/layout :: headerFragment"></div>
 <h1>Overview of all bundles</h1>
 
 <table>
@@ -23,7 +17,9 @@
     </tr>
     <tr th:each="bundle : ${allBundle}">
         <td th:text="${bundle.bundleId}"></td>
-        <td th:text="${bundle.bundleName}"></td>
+        <td><a th:href="@{/bundle/detail/{bundleName}(bundleName=${bundle.bundleName})}" th:text="${bundle.bundleName}"></a></td>
+        <td th:text="${bundle.numberOfAvailableBundleCopies}"></td>
+        <td><a th:href="@{/copyBundle/new/{bundleId}(bundleId=${bundle.bundleId})}">Buy another</a></td>
     </tr>
 </table>
 </body>

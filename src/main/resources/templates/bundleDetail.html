@@ -5,13 +5,7 @@
     <title>Details for bundle</title>
 </head>
 <body>
-<div class="navbar">
-    <a href="/home">Home</a>
-    <a href="/dice">Dice</a>
-    <a href="/dice/new">Add dice</a>
-    <a href="/bundle">Bundles</a>
-    <a href="/bundle/new">Add bundle</a>
-</div>
+<div th:include="fragments/layout :: headerFragment"></div>
 <h1>Details for bundle: <span th:text="${bundleToBeShown.bundleName}"></span></h1>
 
 
@@ -19,6 +13,10 @@
     <tr>
         <td>Title</td>
         <td th:text="${bundleToBeShown.bundleName}"></td>
+    </tr>
+    <tr>
+        <td>Available quantity</td>
+        <td th:text="${bundleToBeShown.numberOfAvailableBundleCopies}"></td>
     </tr>
     <tr>
         <td>Bundle id</td>

@@ -24,6 +24,18 @@ public class Dice {
     private String diceColor;
     private String diceName;
     private String diceMaterial;
-    private Boolean available = true;
 
+    @OneToMany(mappedBy = "dice")
+    private List<CopyDice> diceList;
+
+    public int getNumberOfAvailableDice() {
+        int count = 0;
+
+        for (CopyDice dice : diceList) {
+            if (dice.getAvailable())
+                count++;
+        }
+
+        return count;
+    }
 }

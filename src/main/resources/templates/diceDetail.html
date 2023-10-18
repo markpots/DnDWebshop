@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Details for bundle</title>
+</head>
+<body>
+<div th:include="fragments/layout :: headerFragment"></div>
+<h1>Details for bundle: <span th:text="${diceToBeShown.diceName}"></span></h1>
+
+
+<table>
+    <tr>
+        <td>Title</td>
+        <td th:text="${diceToBeShown.diceName}"></td>
+    </tr>
+    <tr>
+        <td>Available quantity</td>
+        <td th:text="${diceToBeShown.numberOfAvailableDice}"></td>
+    </tr>
+    <tr>
+        <td>Dice id</td>
+        <td th:text="${diceToBeShown.diceId}"></td>
+    </tr>
+    <tr>
+        <td>Dice material</td>
+        <td th:text="${diceToBeShown.diceMaterial}"></td>
+    </tr>
+    <tr>
+        <td>Dice color</td>
+        <td th:text="${diceToBeShown.diceColor}"></td>
+    </tr>
+
+</table>
+</body>
+</html>

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en"xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Delete a bundle</title>
 </head>
 <body>
+<div class="navbar">
+    <a href="/bundle">Back</a>
+</div>
 <h1>Delete a bundle</h1>
 <form th:action="@{/bundle/delete}" method="post" th:object="${bundle}">
     <label for="bundleId">Bundle ID:</label>
-    <input type="number" id="bundleID" th:field="*{bundleId}">
+    <input type="number" id="bundleId" th:field="*{bundleId}">
     <input type="submit" value="Delete bundle">
 </form>
 </body>
