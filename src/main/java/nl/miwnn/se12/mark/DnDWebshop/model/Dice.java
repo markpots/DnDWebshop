@@ -3,10 +3,7 @@ package nl.miwnn.se12.mark.DnDWebshop.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -19,9 +16,19 @@ import java.util.List;
 @Getter @Setter
 public class Dice {
 
+    public Dice(String diceColor, String diceName, String diceMaterial) {
+        this.diceColor = diceColor;
+        this.diceName = diceName;
+        this.diceMaterial = diceMaterial;
+    }
+
+    public Dice(){
+    }
+
     @Id @GeneratedValue
     private Integer diceId;
     private String diceColor;
+    @Column(unique = true)
     private String diceName;
     private String diceMaterial;
 

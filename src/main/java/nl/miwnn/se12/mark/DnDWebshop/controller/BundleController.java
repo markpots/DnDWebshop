@@ -31,7 +31,7 @@ public class BundleController {
 
     @GetMapping("/new")
     private String showBundleForm(Model model) {
-        model.addAttribute("bundle", new Bundle());
+        model.addAttribute("bundle");
 
         return "bundleForm";
     }

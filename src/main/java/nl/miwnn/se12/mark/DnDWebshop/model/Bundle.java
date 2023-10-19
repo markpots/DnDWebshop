@@ -16,6 +16,13 @@ import java.util.List;
 @Getter @Setter
 public class Bundle {
 
+    public Bundle(String bundleName) {
+        this.bundleName = bundleName;
+    }
+
+    public Bundle() {
+    }
+
     @Id @GeneratedValue
     private Integer bundleId;
 

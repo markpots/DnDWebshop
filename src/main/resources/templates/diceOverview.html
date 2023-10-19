@@ -19,11 +19,11 @@
     </tr>
     <tr th:each="dice : ${allDice}">
         <td th:text="${dice.diceId}"></td>
-        <td th:text="${dice.diceName}"></td>
+        <td><a th:href="@{/dice/detail/{diceName}(diceName=${dice.diceName})}" th:text="${dice.diceName}"></a></td>
         <td th:text="${dice.diceMaterial}"></td>
         <td th:text="${dice.diceColor}"></td>
         <td th:text="${dice.numberOfAvailableDice}"></td>
-        <td><a th:href="@{dice/new/{diceId}(diceId=${dice.diceId})}">Buy another</a></td>
+        <td><a th:href="@{/copyDice/new/{diceId}(diceId=${dice.diceId})}">Buy another</a></td>
     </tr>
 </table>
 </body>
